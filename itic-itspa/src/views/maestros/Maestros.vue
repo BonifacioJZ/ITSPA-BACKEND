@@ -1,15 +1,14 @@
 <template>
-     <v-container fill-height>
-        <v-layout justify-center align-center>
-            <v-flex shrink>
-              <h1>Maestros</h1>
-          </v-flex>
-        </v-layout>
+     <v-container >
+        <Treen />
     </v-container>
 </template>
 <script>
+import Treen from '../../components/treen/Treen'
 export default {
     name:"maestros",
-
+    components:{
+        Treen
+    }
 }
 </script>

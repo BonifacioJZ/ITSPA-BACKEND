@@ -1,5 +1,5 @@
 import Vue from "vue";
-import './plugins/vuetify'
+import "./plugins/vuetify";
 import App from "./App.vue";
 import router from "./router";
 import Vuetify from "vuetify";
@@ -16,7 +16,8 @@ Vue.use(Vuetify, {
     warning: "#ff5722",
     info: "#8bc34a",
     success: "#2196f3"
-  }
+  },
+  iconfont: "md"
 });
 
 new Vue({
