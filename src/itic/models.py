@@ -1,10 +1,14 @@
 from django.db import models
 
 # Create your models here.
-# Modelo para la tabla maestros
+
 class Teacher(models.Model):
-    nombre = models.CharField(max_length=50)
-    apellido_paterno = models.CharField(max_length=50)
-    apellido_materno = models.CharField(max_length=50)
-    email = models.EmailField( max_length=254)
-    
+    nombre = models.CharField(max_length=100, blank=True, null=True)
+    apellido_paterno = models.CharField(max_length=100, blank=True, null=True)
+    apellido_materno = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField(max_length=254, blank=True, null=True)
+    timestamp = models.DateField(auto_now=False, auto_now_add=True)
+    actualizado = models.DateField(auto_now_add=False, auto_now=True)
+
+    def __str__(self): #Python 2 __unicode__
+        return self.email
