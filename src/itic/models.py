@@ -13,3 +13,17 @@ class Teacher(models.Model):
 
     def __str__(self): #Python 2 __unicode__
         return self.email
+class Proceso(models.Model):
+    nombre = models.CharField(max_length=100, blank=True, null=True)
+    descripcion = models.TextField()
+    notas = models.CharField(max_length=50, blank=True, null=True)
+    timestamp = models.DateField(auto_now=False, auto_now_add=True)
+    actualizado = models.DateField(auto_now_add=False, auto_now=True)
+
+class Archivo(models.Model):
+    nombre = models.CharField(max_length=100, blank=True, null=True)
+    descripcion = models.TextField()
+    archivo = models.FileField(upload_to="files/")
+    timestamp = models.DateField(auto_now=False, auto_now_add=True)
+    actualizado = models.DateField(auto_now_add=False, auto_now=True)
+    
