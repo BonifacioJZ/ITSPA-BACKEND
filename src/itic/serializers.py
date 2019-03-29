@@ -6,11 +6,11 @@ class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Teacher
         fields= '__all__'
-class ProcesoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Proceso
-        fields= '__all__'
 class ArchivoSerializer(serializers.ModelSerializer):
     class Meta:
         model=Archivo
         fields ='__all__'
+class ProcesoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Proceso
+        fields= '__all__'

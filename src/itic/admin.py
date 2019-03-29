@@ -5,16 +5,16 @@ from .models import Teacher
 from .models import Proceso
 from .models import Archivo
 class AdminTeacher(admin.ModelAdmin):
-    list_display = ["__str__","nombre","timestamp"]
+    list_display = ["nombre","timestamp"]
     class Meta:
         modle = Teacher
 class AdminProcesos(admin.ModelAdmin):
-    list_display = ["__str__","nombre","timestamp"]
+    list_display = ["nombre","timestamp"]
     class Meta:
         modle= Proceso
 class AdminArchivos (admin.ModelAdmin):
 
-    list_display = ["__str__","nombre","timestamp"]
+    list_display = ["nombre","timestamp"]
     class Meta:
         modle= Archivo
 
