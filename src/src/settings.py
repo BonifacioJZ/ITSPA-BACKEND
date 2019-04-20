@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'itic',
+    'ibio',
+    'itspa',
     'rest_framework',
     'corsheaders',
     'tinymce'
@@ -92,9 +94,9 @@ DATABASES = {
     #}
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'itic',
+        'NAME': 'itspa',
         'USER': 'root',
-        'PASSWORD': 'Ghost6699',
+        'PASSWORD': 'ghost6699',
         'HOST': '127.0.0.1',
         'PORT': '3306' 
 }
