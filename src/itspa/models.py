@@ -38,6 +38,7 @@ class Tag (models.Model):
 class Noticia(models.Model):
     titulo = models.CharField(max_length=100, blank=True, null=True, verbose_name=("Titulo"))
     author = models.ForeignKey(User,on_delete=models.DO_NOTHING)
+    foto = models.FileField(upload_to="noticias/",blank=True, null=True)
     descripcion = HTMLField(max_length=300, blank=True, null=True)
     body = HTMLField(blank=True, null=True)
     tags = models.ForeignKey(Tag,on_delete=models.DO_NOTHING,default="1")
