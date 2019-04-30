@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Teacher,Nivel,Formacion_Academica,Tag,Formacion_Academica,Noticia
+from .models import Teacher,Nivel,Formacion_Academica,Tag,Formacion_Academica,New
 
 class AdminTeacher(admin.ModelAdmin):
     list_display = ["name","timestamp"]
@@ -21,14 +21,14 @@ class AdminTag(admin.ModelAdmin):
 
     class Meta:
         modle = Tag
-class AdminNoticia(admin.ModelAdmin):
-    list_display = ["titulo","autor"]
+class AdminNew(admin.ModelAdmin):
+    list_display = ["titulo"]
 
     class Meta:
-        modle = Noticia
+        modle = New
 
 admin.site.register(Teacher,AdminTeacher)
 admin.site.register(Nivel,AdminNivel)
 admin.site.register(Formacion_Academica,AdminFormacionAcademica)
 admin.site.register(Tag,AdminTag)
-admin.site.register(Noticia,AdminNoticia)
+admin.site.register(New,AdminNew)

@@ -1,7 +1,7 @@
 
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models.fields import DateField
+
 
 from tinymce.models import HTMLField
 
@@ -37,11 +37,11 @@ class Tag (models.Model):
         return self.nombre
 class Noticia(models.Model):
     titulo = models.CharField(max_length=100, blank=True, null=True, verbose_name=("Titulo"))
-    author = models.ForeignKey(User,on_delete=models.DO_NOTHING)
+    author = models.ForeignKey(User,on_delete=models.DO_NOTHING, related_name="Usuario")
     foto = models.FileField(upload_to="noticias/",blank=True, null=True)
     descripcion = HTMLField(max_length=300, blank=True, null=True)
     body = HTMLField(blank=True, null=True)
-    tags = models.ForeignKey(Tag,on_delete=models.DO_NOTHING,default="1")
+    tags = models.ManyToManyField(Tag, verbose_name=("Tags"))
     timestamp = models.DateField(auto_now_add=True,auto_now=False,blank=True, null=True)
     actualizado = models.DateField(auto_now=True,auto_now_add=False,blank=True, null=True)
     def __str__(self):
