@@ -37,4 +37,13 @@ class Tag(models.Model):
 
 class New(models.Model):
     titulo = models.CharField(max_length=100,blank=True, null=True)
+    usuario = models.ForeignKey(User,on_delete=models.DO_NOTHING, related_name="Author", default=1)
+    foto = models.FileField(upload_to="noticias/",blank=True, null=True)
+    descripcion = HTMLField(max_length=300, blank=True, null=True)
+    body = HTMLField(blank=True, null=True)
+    tags = models.ManyToManyField(Tag, verbose_name=("Tags"))
+    timestamp = models.DateField(auto_now_add=True,auto_now=False,blank=True, null=True)
+    actualizado = models.DateField(auto_now=True,auto_now_add=False,blank=True, null=True)
+    def __str__(self):
+        return self.titulo
 

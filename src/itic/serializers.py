@@ -20,7 +20,7 @@ class TeacherSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
+        fields = 'id','username'
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
@@ -28,7 +28,7 @@ class TagSerializer(serializers.ModelSerializer):
         fields ='__all__'
 
 class NewSerializer(serializers.ModelSerializer):
-    autor = UserSerializer(many=True,read_only=True)
+    usuario  = UserSerializer(many=False,read_only=True)
     tags = TagSerializer(many=True, read_only=True)
 
     class Meta:

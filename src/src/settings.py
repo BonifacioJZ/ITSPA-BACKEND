@@ -32,8 +32,7 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST =(
-    'localhost:3000',
-    'localhost:8000'
+    ''
 )
     
 
@@ -95,7 +94,7 @@ DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'itspa',
-        'USER': 'root',
+        'USER': 'revan',
         'PASSWORD': 'ghost6699',
         'HOST': '127.0.0.1',
         'PORT': '3306' 

@@ -3,9 +3,9 @@ from rest_framework import viewsets
 from rest_framework.viewsets import ModelViewSet
 
 #Modelos
-from .models import Formacion_Academica, New, Nivel, Teacher
+from .models import Formacion_Academica, New, Nivel, Teacher,Tag
 from .serializers import (FormacionAcademicaSerializer, NewSerializer,
-                          NivelSerializer, TeacherSerializer,UserSerializer)
+                          NivelSerializer, TeacherSerializer,UserSerializer,TagSerializer)
 
 
 class NivelViewSet(viewsets.ModelViewSet):
@@ -25,3 +25,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class NewViewSet(viewsets.ModelViewSet):
     queryset = New.objects.all()
     serializer_class= NewSerializer
+
+class TagViewSet(viewsets.ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
